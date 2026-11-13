@@ -5,56 +5,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>LEGACY | Your Finger. Your Finance.</title>
+    <title>LEGACY</title>
 
     <meta
         name="description"
         content="LEGACY is a biometric payment platform combining fingerprint authentication and NFC technology for seamless payments."
     >
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="page-welcome">
 
-    <header>
-        <nav>
-            <a href="index.html" aria-label="LEGACY Home">
-                LEGACY
-            </a>
+    <header class="site-header">
+        <a href="index.html" class="brand" aria-label="LEGACY Home">
+            <img src="images/fingerprint-logo.png" alt="" class="brand-icon">
+            <span class="brand-name">LEGACY</span>
+        </a>
 
-            <div>
-                <a href="pages/login.html">Sign In</a>
-                <a href="pages/register.html">Get Started</a>
-            </div>
+        <nav class="header-links">
+            <a href="pages/login.html">Sign In</a>
         </nav>
     </header>
 
     <main>
+        <section id="welcome" class="welcome">
 
-        <section id="welcome">
+            <h1 class="visually-hidden">LEGACY</h1>
 
-            <h1>LEGACY</h1>
+            <img
+                src="images/fingerprint.png"
+                alt="Gold fingerprint"
+                class="hero-fingerprint"
+            >
 
-            <h2>Your Finger. Your Finance.</h2>
-
-            <p>
-                Experience a new way to pay.
-                Secure, seamless transactions powered by
-                fingerprint authentication and NFC technology.
+            <p class="lead">
+                Experience a smarter way to pay. Secure your transactions
+                through fingerprint-powered biometric authentication.
             </p>
 
-            <a href="pages/register.html" id="get-started">
+            <a href="pages/register.html" id="get-started" class="btn btn-primary">
                 Get Started
             </a>
 
-            <a href="pages/login.html" id="sign-in">
-                Already have an account? Sign In
+            <a href="pages/login.html" id="sign-in" class="btn btn-outline">
+                I already have an account
             </a>
 
         </section>
-
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 LEGACY. All rights reserved.</p>
     </footer>
 
