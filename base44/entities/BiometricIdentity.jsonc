@@ -1,0 +1,143 @@
+{
+  "name": "BiometricIdentity",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "enrolled",
+        "re_enrolment_required",
+        "suspended"
+      ],
+      "enumColors": [
+        "green",
+        "yellow",
+        "red"
+      ],
+      "default": "enrolled"
+    },
+    "finger": {
+      "type": "string",
+      "enum": [
+        "Right thumb",
+        "Right index",
+        "Right middle",
+        "Left thumb",
+        "Left index",
+        "Left middle"
+      ],
+      "enumColors": [
+        "blue",
+        "blue",
+        "blue",
+        "purple",
+        "purple",
+        "purple"
+      ]
+    },
+    "template_reference": {
+      "type": "string",
+      "description": "Opaque simulated biometric reference returned by the reader SDK. Never a fingerprint image or raw template."
+    },
+    "quality_score": {
+      "type": "number"
+    },
+    "device_label": {
+      "type": "string"
+    },
+    "enrolled_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_verified_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "never_verified",
+        "verified",
+        "failed"
+      ],
+      "enumColors": [
+        "gray",
+        "green",
+        "red"
+      ],
+      "default": "never_verified"
+    },
+    "failed_attempts": {
+      "type": "number",
+      "default": 0
+    },
+    "re_enrolments": {
+      "type": "number",
+      "default": 0
+    },
+    "recovery_status": {
+      "type": "string",
+      "enum": [
+        "none",
+        "requested",
+        "reviewing",
+        "approved"
+      ],
+      "enumColors": [
+        "gray",
+        "yellow",
+        "blue",
+        "green"
+      ],
+      "default": "none"
+    },
+    "recovery_requested_date": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "user_id",
+    "template_reference"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

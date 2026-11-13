@@ -1,0 +1,73 @@
+{
+  "name": "Wallet",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "holder_name": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string",
+      "default": "ZAR"
+    },
+    "balance": {
+      "type": "number",
+      "default": 0
+    },
+    "account_number": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "frozen"
+      ],
+      "enumColors": [
+        "green",
+        "red"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "user_id",
+    "balance"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
