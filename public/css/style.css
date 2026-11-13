@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+/* ============================================
+   LEGACY - shared skin (solid black + gold)
+   ============================================ */
+
+:root {
+    --black: #000000;
+    --gold: #C69630;
+    --gold-light: #D9AE4E;
+    --gold-dark: #7A5A1C;
+    --white: #F5F2EA;
+    --muted: #A8A49A;
+    --border: #2B2415;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+    background: #000000;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    font-family: "Plus Jakarta Sans", Arial, sans-serif;
+    color: var(--white);
+}
+
+main {
+    width: 100%;
+    max-width: 440px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* ---------- Header and brand ---------- */
+
+.site-header {
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.brand:hover {
+    text-decoration: none;
+}
+
+.brand-icon {
+    height: 34px;
+    width: auto;
+}
+
+.brand-name {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.header-links a {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ---------- Links ---------- */
+
+a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn,
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    min-height: 54px;
+    padding: 15px;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+.btn-primary,
+button[type="submit"] {
+    background: var(--gold);
+    color: #000000;
+    border: 1px solid var(--gold);
+}
+
+.btn-primary:hover,
+button[type="submit"]:hover {
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+}
+
+.btn-outline:hover {
+    background: var(--gold);
+    color: #000000;
+}
+
+/* ---------- Welcome page ---------- */
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-fingerprint {
+    width: min(260px, 62vw);
+    margin: 10px 0 36px;
+}
+
+.lead {
+    margin: 0 0 28px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.welcome .btn + .btn {
+    margin-top: 14px;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+    margin-top: 28px;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+    body {
+        padding: 18px;
+    }
+
+    .brand-name {
+        font-size: 21px;
+    }
+}
