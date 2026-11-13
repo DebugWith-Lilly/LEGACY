@@ -6,19 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | LEGACY</title>
     <meta name="description" content="Sign in to your LEGACY account.">
+
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
 </head>
 
-<body>
+<body class="page-auth">
 
-    <header>
-        <a href="../index.html">LEGACY</a>
-        <p>Your Finger. Your Finance.</p>
+    <header class="site-header">
+        <a href="../index.html" class="brand" aria-label="LEGACY Home">
+            <img src="../images/fingerprint-logo.png" alt="" class="brand-icon">
+            <span class="brand-name">LEGACY</span>
+        </a>
     </header>
 
     <main>
-        <section>
-            <h1>Welcome Back</h1>
-            <p>Sign in to access your LEGACY account.</p>
+        <section class="auth-card">
+            <h1>Welcome back.</h1>
+            <p class="subtitle">Sign in to access your LEGACY account.</p>
 
             <form id="login-form">
 
@@ -50,12 +56,14 @@
 
             </form>
 
-            <p>
+            <p class="switch-link">
                 Don't have an account?
                 <a href="register.html">Create an account</a>
             </p>
 
-            <a href="../index.html">Back to Home</a>
+            <p class="switch-link">
+                <a href="../index.html">Back to Home</a>
+            </p>
         </section>
     </main>
 
